@@ -1,0 +1,28 @@
+/*
+ * CiviCRM case activity status styling.
+ *
+ */
+
+/*
+ * Scheduled activities (status 1).
+ * Set Riverlea's striped-row background variable to light amber.
+ */
+#CaseView.CRM_Case_Form_CaseView #activities .crm-entity.status-id-1.status-scheduled {
+  --crm-striped-bg-color: var(--crm-c-amber-light);
+}
+
+/*
+ * Completed activities (status 2).
+ * Set Riverlea's striped-row background variable to the green success color.
+ */
+#CaseView.CRM_Case_Form_CaseView #activities .crm-entity.status-id-2.status-completed {
+  --crm-striped-bg-color: var(--crm-success-color);
+}
+
+/*
+ * Cancelled (status 3), not required (status 6), and no-show (status 8) activities.
+ * Strike through the row text to indicate the activity did not take place.
+ */
+#CaseView.CRM_Case_Form_CaseView #activities .crm-entity.status-completed:is(.status-id-3, .status-id-6, .status-id-8) {
+  text-decoration: line-through;
+}
